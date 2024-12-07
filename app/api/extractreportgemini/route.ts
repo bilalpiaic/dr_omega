@@ -41,8 +41,9 @@ export async function POST(req: Request, res: Response) {
         );
     } catch (error) {
         console.error("Error processing AI request:", error);
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
         return new Response(
-            JSON.stringify({ success: false, error: error.message }),
+            JSON.stringify({ success: false, error: errorMessage }),
             { status: 500 }
         );
     }
