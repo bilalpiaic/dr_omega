@@ -7,6 +7,7 @@ if (!apiKey) {
     throw new Error("Google API Key is missing. Please set GOOGLE_API_KEY in your environment variables.");
 }
 
+
 const genAi = new GoogleGenerativeAI(apiKey);
 const model = genAi.getGenerativeModel({
     model: "gemini-1.5-pro", // Specify the generative AI model

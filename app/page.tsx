@@ -9,6 +9,8 @@ import React from 'react'
 type Props = {}
 
 const HomeComponent = (props: Props) => {
+
+  console.log('HomeComponent')
   return (
     <div className='grid-h-screen -w-full'>
       <div className='flex flex-col'>
