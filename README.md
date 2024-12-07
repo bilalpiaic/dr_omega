@@ -1,4 +1,4 @@
-# Report Processing System with Google Generative AI
+# Medical Report Processing System with Google Generative AI
 
 This project provides a complete system for uploading clinical reports (PDFs or images), processing the reports to identify biomarkers with abnormalities, and summarizing the findings using Google Generative AI (Gemini Model).
 
