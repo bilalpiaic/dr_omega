@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 Here’s the updated version using Markdown `#` for headings and code blocks, suitable for GitHub:
 
 ```markdown
 # Report Processing System with Google Generative AI
+=======
+# Medical Report Processing System with Google Generative AI
+>>>>>>> c7233aa0e253f30fdf177b24874dc1689faef0d1
 
 This project provides a complete system for uploading clinical reports (PDFs or images), processing the reports to identify biomarkers with abnormalities, and summarizing the findings using Google Generative AI (Gemini Model).
 
@@ -41,8 +45,13 @@ This project provides a complete system for uploading clinical reports (PDFs or 
 
 1. **Clone the repository**:
    ```bash
+<<<<<<< HEAD
    git clone <repository-url>
    cd <repository-folder>
+=======
+   git clone https://github.com/bilalpiaic/dr_omega.git
+   cd <almost-md>
+>>>>>>> c7233aa0e253f30fdf177b24874dc1689faef0d1
    ```
 
 2. **Install frontend dependencies**:
@@ -149,4 +158,8 @@ Contributions are welcome! Please fork this repository and submit a pull request
 For major changes, please open an issue first to discuss what you would like to change.
 ```
 
+<<<<<<< HEAD
 This Markdown file is formatted to be clean, readable, and suitable for displaying on GitHub. Each section is organized with headers (`#`, `##`, `###`), and code examples are wrapped in triple backticks (```). This structure ensures that the documentation is easy to navigate and visually appealing.
+=======
+This Markdown file is formatted to be clean, readable, and suitable for displaying on GitHub. Each section is organized with headers (`#`, `##`, `###`), and code examples are wrapped in triple backticks (```). This structure ensures that the documentation is easy to navigate and visually appealing.
+>>>>>>> c7233aa0e253f30fdf177b24874dc1689faef0d1
