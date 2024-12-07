@@ -38,7 +38,7 @@ This project provides a complete system for uploading clinical reports (PDFs or 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/bilalpiaic/dr_omega
+   git clone https://github.com/bilalpiaic/dr_omega.git
    cd <almost-md>
    ```
 
