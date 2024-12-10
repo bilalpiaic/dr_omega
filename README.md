@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Here’s the updated version using Markdown `#` for headings and code blocks, suitable for GitHub:
-
 ```markdown
 # Report Processing System with Google Generative AI
 =======
