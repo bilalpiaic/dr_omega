@@ -70,3 +70,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+@media (max-width: 767px) {
+  .main-tag {
+    display: none; /* Hide on small screens */
+  }
+}

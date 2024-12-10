@@ -6,7 +6,12 @@ import { Label } from "./label";
 import { Textarea } from "./textarea";
 import { useToast } from "@/hooks/use-toast";
 
-const ReportComponent = () => {
+type Props = {
+    onReportConfirmation: (data: string) => void;
+}
+
+
+const ReportComponent = ({onReportConfirmation}: Props ) => {
     const { toast } = useToast();
     const [base64Data, setBase64Data] = useState(""); // State to store Base64 encoded file
     const [reportText, setReportText] = useState(""); // State to store extracted report text
@@ -29,7 +34,7 @@ const ReportComponent = () => {
         if (!isValidImage && !isValidDoc) {
             toast({
                 description: "Unsupported file type. Please upload an image or a valid document.",
-                variant: "destructive",
+                variant: "default",
             });
             return;
         }
@@ -51,7 +56,7 @@ const ReportComponent = () => {
                     console.error("Error converting file to base64:", error);
                     toast({
                         description: "Failed to process the document. Please try again.",
-                        variant: "destructive",
+                        variant: "default",
                     });
                 }
             };
@@ -59,7 +64,7 @@ const ReportComponent = () => {
             reader.onerror = () => {
                 toast({
                     description: "Error reading the document file. Please try again.",
-                    variant: "destructive",
+                    variant: "default",
                 });
             };
 
@@ -84,7 +89,7 @@ const ReportComponent = () => {
         if (!base64Data) {
             toast({
                 description: "Please upload a valid report before extracting!",
-                variant: "destructive",
+                variant: "default",
             });
             return;
         }
@@ -103,7 +108,7 @@ const ReportComponent = () => {
                 console.error("API Error:", errorData);
                 toast({
                     description: "Failed to extract the report. Please try again.",
-                    variant: "destructive",
+                    variant: "default",
                 });
                 return;
             }
@@ -114,7 +119,7 @@ const ReportComponent = () => {
             console.error("Error during API call:", error);
             toast({
                 description: "An error occurred while processing the report.",
-                variant: "destructive",
+                variant: "default",
             });
         } finally {
             setIsLoading(false); // Reset loading state
@@ -131,12 +136,19 @@ const ReportComponent = () => {
                 </Button>
                 <Label>Report Summary</Label>
                 <Textarea
-                    placeholder="Extracted data from the report will appear here."
+                    placeholder={reportText ? "You can edit the extracted data here." : "Extracted data from the report will appear here."}
                     value={reportText}
-                    className="min-h-72 resize-none border-0 p-3 shadow-none"
-                    readOnly
+                    onChange={(e) => setReportText(e.target.value)} // Enable editing
+                    className={`min-h-72 resize-none border rounded-lg p-3 shadow-sm focus:outline-none focus:ring-2 
+                    }`}
+            
                 />
-                <Button className="hover:bg-[#d91313]" disabled={!reportText}>
+
+                <Button 
+                    className="hover:bg-[#d91313]" 
+                    disabled={!reportText} 
+                    onClick={() => onReportConfirmation(reportText)}
+                >
                     Submit
                 </Button>
             </fieldset>
