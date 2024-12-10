@@ -18,7 +18,7 @@ const prompt = `
 Attached is an image of a clinical report. 
 Go over the clinical report and identify biomarkers that show slight or larger abnormalities.
 Then summarize in 100 words. You may increase the word limit if the report has multiple pages. 
-Do not output patient’s name, date, etc. Make sure to include numerical values and key details from the report, including the report title.
+Do not output patient’s name, date, etc. Make sure to include numerical values, key details and describe indicators under discussion from the report, including the report title.
 `;
 
 export async function POST(req: Request, res: Response) {
