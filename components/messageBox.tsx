@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent } from './ui/card'
+import { Card, CardContent, CardFooter } from './ui/card'
 
 type Props = {
     role: string,
@@ -9,10 +9,13 @@ type Props = {
 const MessageBox = ({role,content}: Props) => {
   return (
     <Card>
-        <CardContent>
+        <CardContent className='p-6 text-sm'>
             {content}
         </CardContent>
-    </Card>
+        {role !== "user" && <CardFooter className='border-L bg-muted/50 px-6 py-3 text-xs text-muted-foreground'>
+          Disclamer: The medical advice and recommendations provided by this application are for informational purposes only and should not replace professional medical diagnosis, treatment, or advice.
+          </CardFooter>}  
+          </Card>
   )
 }
 
