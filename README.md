@@ -57,6 +57,7 @@ This project provides a complete system for uploading clinical reports (PDFs or 
    Create a `.env` file in the root directory and add the following:
    ```plaintext
    GEMINI_API_KEY=<your-google-generative-ai-api-key>
+   PINECONE_API_KEY=<your pinecone-api-key> 
    ```
 
 5. **Start the application**:
